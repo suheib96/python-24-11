@@ -1,4 +1,5 @@
-my_list = ["Apfel","Birne","Mango","Zwiebel","Chips","Waschmaschinentabs","Küchenrolle"]
+####### SLicing und indexing
+# my_list = ["Apfel","Birne","Mango","Zwiebel","Chips","Waschmaschinentabs","Küchenrolle"]
 # print(my_list[2]) #hol das zweite element aus der list
 # print(my_list[1:11:2]) # slicing startwert:endwert:sprungwert
 # print(my_list[::2]) # jedes zweite element aus der list
@@ -8,7 +9,7 @@ my_list = ["Apfel","Birne","Mango","Zwiebel","Chips","Waschmaschinentabs","Küch
 # print(my_list[-1]) # das letzte Element aus der Liste
 # print(my_list[-2]) # das vorletzte Element aus der Liste
 
-## append, insert, index und delete befehle
+###### append, insert, index und delete befehle
 # zahlen = [1,2]
 # zahlen.append(3)
 
@@ -31,7 +32,7 @@ my_list = ["Apfel","Birne","Mango","Zwiebel","Chips","Waschmaschinentabs","Küch
 # del(zahlen[1])
 # print(zahlen)
 
-### len und sort,reverse und sorted
+##### len und sort,reverse und sorted
 
 # print(len(my_list))
 # leer = []
@@ -65,37 +66,79 @@ my_list = ["Apfel","Birne","Mango","Zwiebel","Chips","Waschmaschinentabs","Küch
 #     print(f"Deine {i+1}. Farbe ist: {farben[i]}")
 
 ##### Initialisierung einer Liste mit einer for schleife
-zahlen= []
+# zahlen= []
 
-for i in range(10):
-    zahlen.append(i)
+# for i in range(10):
+#     zahlen.append(i)
 
-print(zahlen)
-viele_zahlen = list(range(50))
-print(viele_zahlen)
+# print(zahlen)
+# viele_zahlen = list(range(50))
+# print(viele_zahlen)
 
-quadrate = []
-for i in range(10):
-    quadrate.append(i*i)
-print(quadrate)
+# quadrate = []
+# for i in range(10):
+#     quadrate.append(i*i)
+# print(quadrate)
 
-farben = ["rot","grün","blau","gelb","violett","dunkelrot"]
+# farben = ["rot","grün","blau","gelb","violett","dunkelrot"]
 
 
-print("rot"  in farben) ## True
-print("Apfel" not in farben) ## True
-print("pink" in farben) ## False
+# print("rot"  in farben) ## True
+# print("Apfel" not in farben) ## True
+# print("pink" in farben) ## False
 
-###### List comprehension
+# ###### List comprehension
 
-quadrate2 = [i * i for i in range(10)]
-print(quadrate2)
+# quadrate2 = [i * i for i in range(10)]
+# print(quadrate2)
 
-gerade = []
-for i in range(100):
-    if i % 2 == 0:
-        gerade.append(i)
-print(gerade)
+# ## ohne List Comrephension
+# gerade = []
+# for i in range(100):
+#     if i % 2 == 0:
+#         gerade.append(i)
+# print(gerade)
 
-gerade2 = [i for i in range(100) if i % 2 == 0]
-print(gerade2)
+# ## Mit List comprehension 
+# gerade2 = [i for i in range(100) if i % 2 == 0]
+# print(gerade2)
+
+##### Kopieren und klonen von Listen
+
+# zahl1 = 5
+# zahl2 = zahl1 
+
+# print(zahl1 == zahl2) ## True
+# zahl2 = 10
+# print(zahl1 == zahl2) ## False
+
+# liste1 = [1,2,3]
+# liste2 = liste1
+
+# print(liste1 == liste2) ## True
+# liste2.append(4)
+# print(liste1 == liste2) ## True
+# print(liste1)
+# print(liste2)
+
+# liste1 = [1,2,3]
+# ## 3 Varianten echte Kopien von einer Liste
+# # liste2 = liste1.copy()
+# # liste2 = list(liste1)
+# liste2 = liste1[:] # slicing
+
+# print(liste2 == liste1) ## True
+# liste2.append(4)
+# print(liste2 == liste1) ## False
+
+
+matrix = [[1,2,3],[4,5,6],[7,8,9]]
+print(len(matrix))
+print(matrix[1][1])
+
+for zeile in matrix:
+    print(zeile)
+
+for zeile in matrix:
+    for wert in zeile:
+        print(wert)
